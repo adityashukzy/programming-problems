@@ -18,3 +18,8 @@ Language Used: Python3
 I make a set out of the provided list so that I have a list of the unique elements (i.e. all the colors). Then I traverse through this set, and for each color, I find the corresponding number of socks. Finally, this number is divided by 2 and the decimal part is discarded by typecasting the float to an integer.
 
 One iteration of the outer loop gives us the number of pairs for one color; the entire loop does this for each color and sums all the individual counts to get us the final count of all pairs.
+
+### Efficiency
+Worst-case Time Complexity: O(n^2)
+
+Worst-case Space Complexity: O(n) (each element of the array will be different and there will be no pairs)
