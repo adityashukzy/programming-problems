@@ -1,6 +1,6 @@
 # Problem-Solution Guide
 
-## Two Sum (easy)
+## 1. Two Sum (easy)
 We are provided an array of elements 'nums', and a variable 'target'. We have to traverse the list and find the pair of elements whose sum is equal to the target. We then have to return the indices of this pair in any order.
 
 ### Return
@@ -33,7 +33,7 @@ Worst-case Time Complexity: O(n)
 Worst-case Space Complexity: O(n)
 
 
-## Maximum Subarray (easy)
+## 2. Maximum Subarray (easy)
 We are provided a list 'nums'. Our job is to find the contiguous subarray (with at least one element) which has the maximum sum and then return its sum.
 
 ### Return
