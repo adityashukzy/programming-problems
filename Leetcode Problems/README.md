@@ -31,3 +31,27 @@ We initialize a dictionary (or hash-table). The purpose of this hash table is to
 Worst-case Time Complexity: O(n)
 
 Worst-case Space Complexity: O(n)
+
+
+## Maximum Subarray (easy)
+We are provided a list 'nums'. Our job is to find the contiguous subarray (with at least one element) which has the maximum sum and then return its sum.
+
+### Return
+Return the sum of the contigious subarray which has maximum sum.
+
+### Sample Input
+nums = [-2,1,-3,4,-1,2,1,-5,4]
+
+### Sample Output
+6 (because [4,-1,2,1])
+
+### Approach
+Language Used: Python3
+Kadane's algorithm used. We traverse through the list once with two variables: max_so_far and max_ending_here. Initially, we assign max_so_far to the maximum element of the list (this is for the scenario where we may have all negative numbers. In that case, we want it to return the biggest of them), and we initialize max_ending_here to zero.
+
+We traverse through the list and for each element, we check if the sum including that element is greater than the max sum we have so far. If so, max_so_far is updated. If adding the current element to max_so_far results in a negative number, then we reset max_ending_here to zero. The reason behind this is that none of the contiguous subarrays so far could be greater than max_so_far and not only that, but now we also have max_ending_here as negative. So moving ahead, we want to shave off this negative value that we've been dumped with and start anew from the next element.
+
+#### Efficiency
+Worst-case Time Complexity: O(n)
+
+Worst-case Space Complexity: O(1)
