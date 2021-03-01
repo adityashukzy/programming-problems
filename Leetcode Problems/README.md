@@ -55,3 +55,24 @@ We traverse through the list and for each element, we check if the sum including
 Worst-case Time Complexity: O(n)
 
 Worst-case Space Complexity: O(1)
+
+## 3. Majority Element (easy)
+We are provided a list 'nums'. Our job is to find the majority element. The majority element is the one which appears in the list more than [n/2] times.
+
+### Return
+Return the majority sum.
+
+### Sample Input
+nums = [2,2,1,1,1,2,2]
+
+### Sample Output
+2
+
+### Approach 1
+Language Used: Python3
+Simple approach. I make a set of the list to find all the unique elements. I traverse through this set, and for each I find the count using the .count() method. For each unique element, if its count is greater than the current max, it is assigned as the new max. Finally, the value is returned for which the count is max (i.e. the final value once the loop is over.)
+
+#### Efficiency
+Worst-case Time Complexity: O(n^2)
+
+Worst-case Space Complexity: O(n/2 + 1) = O(n) (will have a set which may at max have (n/2 + 1) unique elments.)
