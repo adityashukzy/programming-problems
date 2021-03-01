@@ -76,3 +76,13 @@ Simple approach. I make a set of the list to find all the unique elements. I tra
 Worst-case Time Complexity: O(n^2)
 
 Worst-case Space Complexity: O(n/2 + 1) = O(n) (will have a set which may at max have (n/2 + 1) unique elments.)
+
+### Approach 2
+Language Used: Python3
+Divide and conquer. Divide list into two down the middle. Keep dividing until we are left with only one element in each subarray and then return that. At each phase of combining results, if the left and right subarray have same majority element, then great: this value is returned as majority for the particular combined subarray of those 2.
+If they do not agree, then for the total subarray (that those 2 form), the count of each of their returned values is measured, and whichever is greater is returned.
+
+#### Efficiency
+Worst-case Time Complexity: O(n . log n) (supposedly faster than Approach 1 but giving slow results in Leetcode)
+
+Worst-case Space Complexity: O(log n) (arrays are not passed at each recursion; only indices. However, the recursive calls build up in the stack and since we are dividing the array into two at each point, the number of calls will be log n.)
