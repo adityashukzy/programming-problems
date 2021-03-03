@@ -86,3 +86,66 @@ If they do not agree, then for the total subarray (that those 2 form), the count
 Worst-case Time Complexity: O(n . log n) (supposedly faster than Approach 1 but giving slow results in Leetcode)
 
 Worst-case Space Complexity: O(log n) (arrays are not passed at each recursion; only indices. However, the recursive calls build up in the stack and since we are dividing the array into two at each point, the number of calls will be log n.)
+
+
+## 4. Delete Node from Linked List (easy)
+Rather than the head, we are provided with the node directly that is to be deleted. We need to make the deletion in-place.
+
+### Return
+No return; in-place deletion.
+
+### Sample Input
+head = [-3,5,-99], node = -3
+
+### Sample Output
+[5, -99]
+
+### Approach
+Language Used: Python3
+Given the node to be deleted, make its value equal to that of the next node. Now, link the current node to the one that comes after the next node i.e. next of next node. So, as in the sample input: [-3,5,-99] becomes [5,5,-99] and then the zeroth element (5) now directly links to the 2nd element (-99).
+Technically, we have not deleted but merely bypassed a node, but the purpose is served nonetheless.
+
+#### Efficiency
+Worst-case Time Complexity: O(1) (just 2 simple assignment statements)
+
+Worst-case Space Complexity: O(1) (no auxiliary variables being used)
+
+
+## 5. Reverse String (easy)
+We are provided a list of characters. We have to reverse this list.
+
+### Return
+No returns; modify in-place
+
+### Sample Input
+s = ["h","e","l","l","o"]
+
+### Sample Output
+s = ["o","l","l","e","h"]
+
+### Approach 1
+Language Used: Python3
+.reverse() function that modifies list in place. Not ideal to be used in interviews since no logic used here.
+
+#### Efficiency
+Worst-case Time Complexity: O(n/2) = O(n)
+
+Worst-case Space Complexity: O(1) (no auxiliary space)
+
+### Approach 2
+Language Used: Python3
+This is actually exactly what Python's .reverse() function does. We traverse the array and swap out i'th element with (size - 1) - i'th element. Basically, first is swapped with last, second with second last, and so on.
+
+#### Efficiency
+Worst-case Time Complexity: O(n/2) = O(n) (same as before)
+
+Worst-case Space Complexity: O(1) (no auxiliary space; same as before)
+
+### Approach 3
+Language Used: Python3
+Slicing the list. s[::-1] returns the entire list in reverse order, and we assign this to s[:]. Keep in mind that simply assigning to s will not work since we're returning the list as a slice (even though the slice contains the whole list) rather than the list itself explicity.
+
+#### Efficiency
+Worst-case Time Complexity: O(1)
+
+Worst-case Space Complexity: O(1)
